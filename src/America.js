@@ -1,4 +1,5 @@
 import React from 'react';
+import State from "./State";
 
 const states = [
   "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado",
@@ -13,14 +14,12 @@ const states = [
 
 function America() {
   return (
-    <ul>
-    {
-      states.map((state, idx) => (
-        <li>{state}</li>
-      ))
-    }
-    </ul>
-  );
+    <div>
+      { 
+        states.map((state, idx) => <State state={state} key={state} /> ) 
+      }
+    </div>
+ );
 }
 
 export default America;
