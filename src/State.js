@@ -1,14 +1,14 @@
 import React from "react";
+import StateFlag from "./StateFlag";
+
 const divStyle = {display: "inline-block", margin: "5px", textAlign: "center"}
-const State = ( {state} ) => {
+
+const State = ( {state, showFlags=true} ) => {
     if (typeof(state) !== "string") return null;
     return (
         <div style={divStyle}>
             <p>{state}</p>
-            <img style={{width:'75px', borderStyle:'solid', borderWidth:'1px' }}
-                 src={`/images/America/${state.replace(/\s/g, '_')}.png`} 
-                 alt={`State flag of ${state}`} 
-            />
+            <StateFlag state={state} showFlag={showFlags} />
         </div>
     )
 }

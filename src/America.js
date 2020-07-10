@@ -15,6 +15,7 @@ const states = [
 function America() {
 
   const [filter, setFilter] = useState("");
+  const [showFlags, setShowFlags] = useState(true);
 
   return (
     <div>
@@ -25,6 +26,16 @@ function America() {
           value={filter}
           onChange={(e) => { setFilter(e.target.value); }}
         />
+
+        <input
+          type="checkbox"
+          checked={showFlags}
+          onChange={(e) => {
+            setShowFlags(e.target.checked);
+          }}
+        />
+        Show flags
+
       </p>
       {
         states.filter((state) =>
@@ -32,7 +43,12 @@ function America() {
           state.toUpperCase().includes(filter.toUpperCase())
         ).map((state, idx) => {
           return (
-            <State state={state} key={state} />
+            <State
+              key={state}
+              state={state}
+              showFlags={showFlags}
+            />
+
           )
         })
       }
