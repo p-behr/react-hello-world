@@ -1,8 +1,9 @@
 import React from 'react';
+import America from "./America";
 
-function App( {name="World"} ) {
+function App() {
   return (
-    <h1>Hello, {name}!</h1>
+    <America />
   );
 }
 

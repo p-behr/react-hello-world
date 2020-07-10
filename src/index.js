@@ -4,7 +4,7 @@ import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App name="OCEAN TechCon20"/>
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
