@@ -1,9 +1,32 @@
 import React from 'react';
-import America from "./America";
+import Region from "./Region";
 
 function App() {
   return (
-    <America />
+    <>
+    
+      <Region 
+        region="America" 
+        url="https://techcon20.s3-us-west-2.amazonaws.com/America.json"
+      />
+      <Region 
+        region="Canada" 
+        url="https://techcon20.s3-us-west-2.amazonaws.com/Canada.json"
+      />
+      <Region 
+        region="Australia" 
+        url="https://techcon20.s3-us-west-2.amazonaws.com/Australia.json"
+      />    
+      <Region 
+        region="Europe" 
+        url="https://techcon20.s3-us-west-2.amazonaws.com/Europe.json"
+      />    
+      <Region 
+        region="South America" 
+        url="https://techcon20.s3-us-west-2.amazonaws.com/South_America.json"
+      />    
+      
+    </>
   );
 }
 

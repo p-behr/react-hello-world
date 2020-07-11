@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import State from "./State";
 
-function America({ url = "./data/America.json" }) {
+function Region({ region, url }) {
 
   const [filter, setFilter] = useState("");
   const [showFlags, setShowFlags] = useState(true);
@@ -19,6 +19,9 @@ function America({ url = "./data/America.json" }) {
   
   return (
     <div>
+      <header>
+        <h1>Hello, {region}!</h1>
+      </header>
       <p>
         <input
           type="text"
@@ -47,6 +50,7 @@ function America({ url = "./data/America.json" }) {
               key={state}
               state={state}
               showFlags={showFlags}
+              region={region}
             />
 
           )
@@ -57,4 +61,4 @@ function America({ url = "./data/America.json" }) {
   );
 }
 
-export default America;
+export default Region;

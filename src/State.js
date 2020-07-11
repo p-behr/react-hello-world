@@ -1,15 +1,19 @@
-import React from "react";
-import StateFlag from "./StateFlag";
+import React from "react";
+import StateFlag from "./StateFlag";
 
-const divStyle = {display: "inline-block", margin: "5px", textAlign: "center"}
+const divStyle = { display: "inline-block", margin: "5px", textAlign: "center" }
 
-const State = ( {state, showFlags=true} ) => {
-    if (typeof(state) !== "string") return null;
-    return (
-        <div style={divStyle}>
-            <p>{state}</p>
-            <StateFlag state={state} showFlag={showFlags} />
-        </div>
-    )
+const State = ({ state, showFlags = true, region }) => {
+    if (typeof (state) !== "string") return null;
+    return (
+        <div style={divStyle}>
+            <p>{state}</p>
+            <StateFlag 
+                state={state} 
+                showFlag={showFlags}
+                region={region}
+            />
+        </div>
+    )
 }
-export default State;
+export default State;
