@@ -3,7 +3,7 @@ import Subregion from "./Subregion";
 
 function Region({region="America", url="./data/America.json"}) {
 
-    const [filter, setFilter] = useState("");
+    const [filterText, setFilterText] = useState("");
     const [subregions, setSubregions] = useState([]);
 
     useEffect(() => {
@@ -22,14 +22,14 @@ function Region({region="America", url="./data/America.json"}) {
                 <input 
                     type="text"
                     placeholder="filter..."
-                    value={filter}
-                    onChange={(e)=>{setFilter(e.target.value);}}
+                    value={filterText}
+                    onChange={(e)=>{setFilterText(e.target.value);}}
                 />
             </p>
             {
                 subregions.filter((subregion) =>
-                    filter === '' ||
-                    subregion.toUpperCase().includes(filter.toUpperCase())
+                    filterText === '' ||
+                    subregion.toUpperCase().includes(filterText.toUpperCase())
                 ).map((subregion, idx) => (
                     <Subregion 
                         region_name={region}
