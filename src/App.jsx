@@ -4,8 +4,8 @@ function App( ) {
   return (
     <div className="app">
         <Region 
-            region="America"
-            url="./data/America.json"
+            region="Canada"
+            url="./data/Canada.json"
         />
     </div>
   )
