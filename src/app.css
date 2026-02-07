@@ -1,0 +1,11 @@
+nav a {
+    margin: 15px;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: blue;
+    padding: 10px;
+    color: white;
+    font-family: arial;
+    font-weight: bold;
+}
