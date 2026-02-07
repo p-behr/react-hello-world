@@ -1,3 +1,5 @@
+import Subregion from './Subregion'
+
 const subregions = [
     "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado",
     "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois",
@@ -13,13 +15,14 @@ function Region() {
     return(
         <div className="region">
             <h1>Region</h1>
-            <ul>
-                {
-                    subregions.map((subregion) => (
-                        <li>{subregion}</li>
-                    ))
-                }
-            </ul>
+            {
+                subregions.map((subregion) => (
+                    <Subregion 
+                        subregion_name={subregion} 
+                        key={subregion}
+                    />
+                ))
+            }
         </div>
     )    
 }
