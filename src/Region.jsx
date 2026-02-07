@@ -1,4 +1,5 @@
 import Subregion from './Subregion'
+import {useState} from 'react'
 
 const subregions = [
     "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado",
@@ -12,11 +13,27 @@ const subregions = [
 ]
 
 function Region() {
+    
+    const [filterText, setFilterText] = useState("");
+    
     return(
         <div className="region">
             <h1>Region</h1>
+            <p>
+                <input 
+                    type="text"
+                    placeholder="filter..."
+                    value={filterText}
+                    onChange={(e)=>{
+                        setFilterText(e.target.value);
+                    }}
+                />
+            </p>
             {
-                subregions.map((subregion) => (
+                subregions.filter((subregion) => 
+                    filterText === "" ||
+                    subregion.toUpperCase().includes(filterText.toUpperCase())
+                ).map((subregion) => (
                     <Subregion 
                         subregion_name={subregion} 
                         key={subregion}
