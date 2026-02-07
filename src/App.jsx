@@ -3,7 +3,7 @@ import Region from './Region.jsx'
 function App( ) {
   return (
     <div className="app">
-        <Region />
+        <Region url="./data/America.json"/>
     </div>
   )
 }
