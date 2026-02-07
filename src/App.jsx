@@ -1,6 +1,10 @@
-function App( {name="<Your name here>"} ) {
+import Region from './Region.jsx'
+
+function App( ) {
   return (
-    <h1>Hello , {name}!!</h1>
+    <div className="app">
+        <Region />
+    </div>
   )
 }
 export default App
