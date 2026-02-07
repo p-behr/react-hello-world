@@ -1,7 +1,7 @@
 import Subregion from './Subregion'
 import {useState, useEffect} from 'react'
 
-function Region({url="./data/America.json"}) {
+function Region({region="America", url="./data/America.json"}) {
     
     const [filterText, setFilterText] = useState("");
     const [subregions, setSubregions] = useState([]);
@@ -19,7 +19,7 @@ function Region({url="./data/America.json"}) {
     
     return(
         <div className="region">
-            <h1>Region</h1>
+            <h1>Hello, {region}!</h1>
             <p>
                 <input 
                     type="text"
@@ -36,6 +36,7 @@ function Region({url="./data/America.json"}) {
                     subregion.toUpperCase().includes(filterText.toUpperCase())
                 ).map((subregion) => (
                     <Subregion 
+                        region_name={region}
                         subregion_name={subregion} 
                         key={subregion}
                     />
